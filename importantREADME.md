@@ -1,0 +1,4 @@
+# CSCI306
+EVERY PARTNER PROJECT AUTHORS:
+Sarah McCabe
+Stephen Kistler
