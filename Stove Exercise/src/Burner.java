@@ -44,8 +44,20 @@ public class Burner {
 		}
 	}
 
-	public void updateTempterature() {	//update timer and temp
-		
+	public void updateTemperature() {	//update timer and temp
+		switch(mySetting.getStatus()){
+		case HIGH:
+			myTemperature = Temperature.BLAZING;
+			break;
+		case MEDIUM:
+			myTemperature = Temperature.HOT;
+			break;
+		case LOW:
+			myTemperature = Temperature.WARM;
+			break;
+		case OFF:
+			myTemperature = Temperature.COLD;
+		}
 	}
 
 	@Override
