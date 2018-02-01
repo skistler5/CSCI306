@@ -42,16 +42,17 @@ public class Setting {
 
 	@Override
 	public String toString(){
+		String output = "[" + set + "].....";
 		switch(status){
 		case HIGH:
-			return set + ".....VERY HOT! DONT TOUCH!";
+			output += "VERY HOT! DONT TOUCH!";
 		case MEDIUM:
-			return set + ".....CAREFUL";
+			output += "CAREFUL";
 		case LOW:
-			return set + ".....warm";
+			output += "warm";
 		case OFF:
-			return set + ".....coool";
+			output += "coool";
 		}
-		return null;
+		return output;
 	}
 }
