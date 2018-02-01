@@ -34,6 +34,7 @@ public class Stove {
 	public void displayStove() {
 		boolean isBlazing = false;
 		for(int i = 0; i < 4; i++) {
+			burners.get(i).updateTemperature();
 			if (burners.get(i).getMyTemperature() == Burner.Temperature.BLAZING) {
 				isBlazing = true;
 			}
@@ -42,6 +43,7 @@ public class Stove {
 		if(isBlazing) {
 			System.out.println("RED LIGHT - HOT BURNER ALERT");
 		}
+		isBlazing = false;
 	}
 	
 	/**
@@ -113,12 +115,12 @@ public class Stove {
 		stove.displayStove();
 		stove.moreBurnerAdjustments();
 		stove.timePassing(1);
-		// Ensure temperatures don't update til time has passed
+		// Ensure temperatures don't update until time has passed
 		System.out.println("\nStove waiting for time to elapse ");
 		stove.displayStove();
 		stove.timePassing(1);
 		System.out.println("\nStove in final state ");
-		stove.displayStove();	
+		stove.displayStove();
 	}
 
 }

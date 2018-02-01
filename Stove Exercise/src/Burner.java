@@ -16,12 +16,15 @@ public class Burner {
 		switch(mySetting.getStatus()){
 		case OFF:
 			mySetting.setStatus("--+");
+			timer = timer + TIME_DURATION;
 			break;
 		case LOW:
 			mySetting.setStatus("-++");
+			timer = timer + TIME_DURATION;
 			break;
 		case MEDIUM:
 			mySetting.setStatus("+++");
+			timer = timer + TIME_DURATION;
 			break;
 		default:
 			break;
@@ -32,12 +35,15 @@ public class Burner {
 		switch(mySetting.getStatus()){
 		case HIGH:
 			mySetting.setStatus("-++");
+			timer = timer + TIME_DURATION;
 			break;
 		case MEDIUM:
 			mySetting.setStatus("--+");
+			timer = timer + TIME_DURATION;
 			break;
 		case LOW:
 			mySetting.setStatus("---");
+			timer = timer + TIME_DURATION;
 			break;
 		default:
 			break;
@@ -45,18 +51,23 @@ public class Burner {
 	}
 
 	public void updateTemperature() {	//update timer and temp
-		switch(mySetting.getStatus()){
-		case HIGH:
-			myTemperature = Temperature.BLAZING;
-			break;
-		case MEDIUM:
-			myTemperature = Temperature.HOT;
-			break;
-		case LOW:
-			myTemperature = Temperature.WARM;
-			break;
-		case OFF:
-			myTemperature = Temperature.COLD;
+		if (timer > 0) {
+			timer --;
+		}
+		else {
+			switch(mySetting.getStatus()){
+			case HIGH:
+				myTemperature = Temperature.BLAZING;
+				break;
+			case MEDIUM:
+				myTemperature = Temperature.HOT;
+				break;
+			case LOW:
+				myTemperature = Temperature.WARM;
+				break;
+			case OFF:
+				myTemperature = Temperature.COLD;
+			}
 		}
 	}
 
@@ -68,7 +79,5 @@ public class Burner {
 	public Temperature getMyTemperature() {
 		return myTemperature;
 	}
-
-
 
 }

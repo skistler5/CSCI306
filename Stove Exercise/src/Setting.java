@@ -38,6 +38,7 @@ public class Setting {
 		else{
 			status = Status.HIGH;
 		}
+		this.set = set;
 	}
 
 	@Override
@@ -46,12 +47,16 @@ public class Setting {
 		switch(status){
 		case HIGH:
 			output += "VERY HOT! DONT TOUCH!";
+			break;
 		case MEDIUM:
 			output += "CAREFUL";
+			break;
 		case LOW:
 			output += "warm";
+			break;
 		case OFF:
 			output += "coool";
+			break;
 		}
 		return output;
 	}
