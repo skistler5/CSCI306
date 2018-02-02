@@ -1,83 +1,106 @@
+// Authors: Sarah McCabe, Stephen Kistler
+// Due: 2/2/18
+// Description: Burner class - individual burner and it's status
 
 public class Burner {
 	public enum Temperature{BLAZING, HOT, WARM, COLD};
 	private Temperature myTemperature;
 	private Setting mySetting;
-	private int timer = 0;
+	private int timer;
 	public final static int TIME_DURATION = 2;
 
+	//constructor - off settings
 	public Burner(){
 		super();
 		this.myTemperature = Temperature.COLD;
-		this.mySetting = new Setting("---");
+		this.mySetting = Setting.OFF;
+		timer = 0;
 	}
 
-	public void plusButton(){	//needs to set timer
+	//raises setting one level up (i.e. warm -> hot)
+	public void plusButton(){
+		timer = TIME_DURATION;
 		switch(mySetting.getStatus()){
-		case OFF:
-			mySetting.setStatus("--+");
-			timer = timer + TIME_DURATION;
+		case "---":
+			mySetting = Setting.LOW;
 			break;
-		case LOW:
-			mySetting.setStatus("-++");
-			timer = timer + TIME_DURATION;
+		case "--+":
+			mySetting = Setting.MEDIUM;
 			break;
-		case MEDIUM:
-			mySetting.setStatus("+++");
-			timer = timer + TIME_DURATION;
+		case "-++":
+			mySetting = Setting.HIGH;
 			break;
 		default:
 			break;
 		}
 	}
 
-	public void minusButton(){	//needs to set timer
+	//lowers the setting one level down (i.e. warm -> cold)
+	public void minusButton(){
+		timer = TIME_DURATION;
 		switch(mySetting.getStatus()){
-		case HIGH:
-			mySetting.setStatus("-++");
-			timer = timer + TIME_DURATION;
+		case "+++":
+			mySetting = Setting.MEDIUM;
 			break;
-		case MEDIUM:
-			mySetting.setStatus("--+");
-			timer = timer + TIME_DURATION;
+		case "-++":
+			mySetting = Setting.LOW;
 			break;
-		case LOW:
-			mySetting.setStatus("---");
-			timer = timer + TIME_DURATION;
+		case "--+":
+			mySetting = Setting.OFF;
 			break;
 		default:
 			break;
+
 		}
 	}
-
-	public void updateTemperature() {	//update timer and temp
-		if (timer > 0) {
+	public void updateTemperature() {	//update timer and temperature
+		if (timer > 1) {	//must be at time 0 to update
 			timer --;
 		}
 		else {
-			switch(mySetting.getStatus()){
-			case HIGH:
+			timer += TIME_DURATION;
+			switch(mySetting.getStatus()){	//updates temperature to match burner setting
+			case "+++":
 				myTemperature = Temperature.BLAZING;
 				break;
-			case MEDIUM:
+			case "-++":
 				myTemperature = Temperature.HOT;
 				break;
-			case LOW:
+			case "--+":
 				myTemperature = Temperature.WARM;
 				break;
-			case OFF:
+			case "---":
 				myTemperature = Temperature.COLD;
+				break;
 			}
 		}
 	}
 
+	//show burner status
 	@Override
 	public String toString() {
-		return mySetting.toString();
+		String output = mySetting.toString();
+		switch (myTemperature) {
+		case BLAZING:
+			output += "VERY HOT! DON'T TOUCH"; 
+			break;
+		case HOT:
+			output += "CAREFUL"; 
+			break;
+		case WARM:
+			output += "warm"; 
+			break;
+		case COLD:
+			output += "coooool"; 
+			break;
+		}
+		return output;
 	}
 
+	//getter for temperature 
 	public Temperature getMyTemperature() {
 		return myTemperature;
 	}
-
 }
+
+

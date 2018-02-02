@@ -1,6 +1,8 @@
+// Authors: Sarah McCabe, Stephen Kistler
+// Due: 2/2/18
+// Description: Stove Class - displayStove()
+
 import java.util.ArrayList;
-
-
 
 /**
  * Stove class. 
@@ -14,7 +16,7 @@ public class Stove {
 	// Our stove will have 4 burners
 	public final static int NUM_BURNERS = 4;
 	private ArrayList<Burner> burners; 
-	
+
 	/** 
 	 * Constructor for the stove
 	 * Set up the burners
@@ -25,27 +27,30 @@ public class Stove {
 		for (int i=0; i<NUM_BURNERS; i++)
 			burners.add(new Burner());
 	}
-	
+
 	/**
 	 * Display the current stove status
 	 *  
 	 **** You must write the following method ****
 	 */
+
+	//display current stove status for all 4 stoves
 	public void displayStove() {
-		boolean isBlazing = false;
+		boolean isBlazing = false;	
 		for(int i = 0; i < 4; i++) {
-			burners.get(i).updateTemperature();
+			//burners.get(i).updateTemperature();
 			if (burners.get(i).getMyTemperature() == Burner.Temperature.BLAZING) {
 				isBlazing = true;
 			}
 			System.out.println(burners.get(i).toString());
 		}
 		if(isBlazing) {
+			//only prints warning if minimun one burner is on the maximum setting
 			System.out.println("RED LIGHT - HOT BURNER ALERT");
 		}
 		isBlazing = false;
 	}
-	
+
 	/**
 	 * Model various burner actions by trunign up
 	 */
@@ -61,7 +66,7 @@ public class Stove {
 		burners.get(2).plusButton();
 		// Burner 3 should remain OFF
 	}
-	
+
 	/**
 	 * test adjusting the burners
 	 */
@@ -73,7 +78,7 @@ public class Stove {
 		// Decrease burner 2 to OFF
 		burners.get(2).minusButton();	
 	}
-	
+
 	/**
 	 * some more burner adjustments
 	 */
@@ -84,7 +89,7 @@ public class Stove {
 		// Increase burner 3 to LOW
 		burners.get(3).plusButton();
 	}	
-	
+
 	/**
 	 * Simulate passage of time
 	 * 
@@ -96,7 +101,7 @@ public class Stove {
 			for (Burner burner : burners)
 				burner.updateTemperature();
 	}
-	
+
 	/**
 	 * Main driver for simulation
 	 * @param args Unused

@@ -1,63 +1,24 @@
+// Authors: Sarah McCabe, Stephen Kistler
+// Due: 2/2/18
+// Description: Burner Settings
 
-public class Setting {
-	public enum Status{OFF, LOW, MEDIUM, HIGH};
-	private Status status;
-	private String set;
+public enum Setting {	//enumerated type
+	OFF("---"), LOW("--+"), MEDIUM("-++"), HIGH("+++");	//four setting types
+	private String status;	//string representation of current
 
-	public Setting(String set){
-		super();
-		if(set.equals("---")){
-			status = Status.OFF;
-		}
-		else if(set.equals("--+")){
-			status = Status.LOW;
-		}
-		else if(set.equals("-++")){
-			status = Status.MEDIUM;
-		}
-		else{
-			status = Status.HIGH;
-		}
-		this.set = set;
+	//constructor
+	Setting(String status){
+		this.status = status;
 	}
 
-	public Status getStatus(){
+	//getter for setting status
+	public String getStatus(){
 		return status;
 	}
 
-	public void setStatus(String set){
-		if(set.equals("---")){
-			status = Status.OFF;
-		}
-		else if(set.equals("--+")){
-			status = Status.LOW;
-		}
-		else if(set.equals("-++")){
-			status = Status.MEDIUM;
-		}
-		else{
-			status = Status.HIGH;
-		}
-		this.set = set;
-	}
-
+	//called by Burner display
 	@Override
-	public String toString(){
-		String output = "[" + set + "].....";
-		switch(status){
-		case HIGH:
-			output += "VERY HOT! DONT TOUCH!";
-			break;
-		case MEDIUM:
-			output += "CAREFUL";
-			break;
-		case LOW:
-			output += "warm";
-			break;
-		case OFF:
-			output += "coool";
-			break;
-		}
-		return output;
+	public String toString(){		
+		return ("[" + status + "]....." );
 	}
 }
