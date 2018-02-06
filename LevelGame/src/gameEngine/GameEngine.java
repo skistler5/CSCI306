@@ -123,6 +123,10 @@ public class GameEngine {
 					break;
 				}
 			}
+			if(result == InteractionResult.LIFE){
+				player.minusDamage();
+				System.out.println("\nYou just gained a life!\n");
+			}
 			if (result == InteractionResult.KILL) {
 				player.killed();
 				System.out.println("\nSomething just killed you!\n");

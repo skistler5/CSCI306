@@ -96,6 +96,13 @@ public class Player implements Drawable {
 	}
 	
 	/**
+	 * Decreases damage player has taken
+	 */
+	public void minusDamage(){
+		damagePoints--;
+	}
+	
+	/**
 	 * Sets player status to killed
 	 */
 	public void killed() {
