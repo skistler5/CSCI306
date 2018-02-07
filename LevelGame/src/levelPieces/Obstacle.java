@@ -4,8 +4,9 @@ import gameEngine.Drawable;
 import gameEngine.InteractionResult;
 
 public class Obstacle extends GamePiece implements Drawable{
+	static char symbol = 'O';
 
-	public Obstacle(char symbol, int location) {
+	public Obstacle(int location) {
 		super(symbol, location);
 	}
 

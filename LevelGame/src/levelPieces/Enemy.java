@@ -4,8 +4,9 @@ import gameEngine.Drawable;
 import gameEngine.InteractionResult;
 
 public class Enemy extends GamePiece implements Drawable {
+	static char symbol = 'E';
 
-	public Enemy(char symbol, int location) {
+	public Enemy(int location) {
 		super(symbol, location);
 	}
 

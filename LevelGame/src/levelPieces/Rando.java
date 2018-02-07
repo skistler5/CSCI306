@@ -4,10 +4,10 @@ import gameEngine.Drawable;
 import gameEngine.InteractionResult;
 import java.util.Random;
 
-
 public class Rando extends GamePiece implements Drawable{
-
-	public Rando(char symbol, int location) {
+	static char symbol = '!';
+			
+	public Rando(int location) {
 		super(symbol, location);
 	}
 

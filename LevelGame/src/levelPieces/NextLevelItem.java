@@ -4,8 +4,9 @@ import gameEngine.Drawable;
 import gameEngine.InteractionResult;
 
 public class NextLevelItem extends GamePiece implements Drawable{
-
-	public NextLevelItem(char symbol, int location) {
+	static char symbol = 'N';
+			
+	public NextLevelItem(int location) {
 		super(symbol, location);
 	}
 
@@ -16,5 +17,6 @@ public class NextLevelItem extends GamePiece implements Drawable{
 		}
 		return null;
 	}
+	
 
 }
