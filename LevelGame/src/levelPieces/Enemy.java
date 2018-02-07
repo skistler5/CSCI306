@@ -18,5 +18,6 @@ public class Enemy extends GamePiece implements Drawable {
 		return null;
 	}
 	
+	
 
 }

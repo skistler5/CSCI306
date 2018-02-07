@@ -25,5 +25,5 @@ public class Rando extends GamePiece implements Drawable{
 		}		
 		return null;
 	}
-
+	
 }
