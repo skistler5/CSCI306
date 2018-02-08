@@ -1,3 +1,4 @@
+//movement or lack of movement has not been determined
 package levelPieces;
 
 import gameEngine.Drawable;

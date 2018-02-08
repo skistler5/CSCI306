@@ -1,3 +1,4 @@
+// Drawable piece - no interaction
 package levelPieces;
 
 import gameEngine.Drawable;

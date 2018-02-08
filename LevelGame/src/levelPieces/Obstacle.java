@@ -1,3 +1,4 @@
+//game piece does not move
 package levelPieces;
 
 import gameEngine.Drawable;
