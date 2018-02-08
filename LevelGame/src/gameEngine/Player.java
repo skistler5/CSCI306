@@ -11,12 +11,12 @@ import java.util.Scanner;
  *
  */
 public class Player implements Drawable {
-	
+
 	/**
 	 * The number of hits that can be taken before death. 
 	 */
 	public static final int POINTS_TO_DIE = 2;
-	
+
 	/**
 	 * The number of points to complete a level. 
 	 * Player can earn 1 point at a time by interacting with a game piece.
@@ -29,7 +29,7 @@ public class Player implements Drawable {
 	private int damagePoints;
 	public enum PlayerStatus {DEAD, ADVANCING, OK; }
 	private PlayerStatus playerStatus;
-	
+
 	/**
 	 * Constructor for player
 	 * 
@@ -39,7 +39,7 @@ public class Player implements Drawable {
 		// always reset status when create player or start new level
 		resetLevel(location);
 	}
-	
+
 	/**
 	 * resetLevel resets all player statistics for the new level
 	 * 
@@ -51,7 +51,7 @@ public class Player implements Drawable {
 		damagePoints = 0; 
 		levelPoints = 0;
 	}
-	
+
 	/**
 	 * Draws the player
 	 */
@@ -71,7 +71,7 @@ public class Player implements Drawable {
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Test to see if player is dead
 	 * 
@@ -80,42 +80,42 @@ public class Player implements Drawable {
 	public boolean isDead() {
 		return (playerStatus == PlayerStatus.DEAD || damagePoints >= POINTS_TO_DIE);
 	}
-	
+
 	/**
 	 * Increments players points in current level
 	 */
 	public void addPoint() {
 		levelPoints++;
 	}
-	
+
 	/**
 	 * Increments damage player has taken
 	 */
 	public void takeDamage() {
 		damagePoints++;
 	}
-	
+
 	/**
 	 * Decreases damage player has taken
 	 */
 	public void minusDamage(){
 		damagePoints--;
 	}
-	
+
 	/**
 	 * Sets player status to killed
 	 */
 	public void killed() {
 		playerStatus = PlayerStatus.DEAD;
 	}
-	
+
 	/**
 	 * Sets player status to advancing
 	 */
 	public void wonAdvance() {
 		playerStatus = PlayerStatus.ADVANCING;
 	}
-	
+
 	/**
 	 * Get the players move, and move him
 	 * 
@@ -130,9 +130,9 @@ public class Player implements Drawable {
 			// will be true if move is valid
 			moved = updatePlayerLocation(choice);
 		}
-		
+
 	}
-	
+
 
 	/**
 	 * Accepts and returns the player's movement choice. 
@@ -158,7 +158,7 @@ public class Player implements Drawable {
 		} while (playerChoice < 1 || playerChoice > 4);
 		return playerChoice;
 	}
-	
+
 	/**
 	 * Display the players menu of choices
 	 */
@@ -202,7 +202,7 @@ public class Player implements Drawable {
 		location = newLocation;		
 		return true;
 	}
-	
+
 	/**
 	 * Getter for player location
 	 * 

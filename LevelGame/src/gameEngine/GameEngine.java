@@ -48,8 +48,8 @@ public class GameEngine {
 	public GameEngine() {
 		levels = new LevelEngine(); 
 	}
-	
-	
+
+
 	/**
 	 * Should be called at the beginning of every level (including beginning 
 	 * of program) to set up the data for that level.
@@ -141,7 +141,7 @@ public class GameEngine {
 			}
 		}			
 	}
-	
+
 	/**
 	 * Determines if this level is complete. 
 	 * Will be complete if player is advancing (either by interaction 
@@ -200,7 +200,7 @@ public class GameEngine {
 			System.out.println("Congratulations, you won!");
 		System.exit(0);
 	}
-	
+
 	/**
 	 * Driver for the game.   Creates game and plays it.
 	 * 
