@@ -22,7 +22,12 @@ public class Enemy extends GamePiece implements Drawable, Moveable {
 
 	@Override
 	public void move(Drawable[] gameBoard, int playerLocation) {
-		 
+		 if (playerLocation < getLocation()) {
+			 location --;
+		 }
+		 else {
+			 location++;
+		 }
 	}
 	
 	

@@ -25,6 +25,8 @@ public class LifeBox extends GamePiece implements Drawable, Moveable{
 
 	@Override
 	public void move(Drawable[] gameBoard, int playerLocation) {
+		int r = rand.nextInt() % 21;	//random spot on array
+		//need to make sure its not in way of other pieces
 		
 		
 	}
