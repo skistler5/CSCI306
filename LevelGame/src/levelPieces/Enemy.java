@@ -2,6 +2,7 @@
 package levelPieces;
 
 import gameEngine.Drawable;
+
 import gameEngine.InteractionResult;
 import gameEngine.Moveable;
 
@@ -22,14 +23,21 @@ public class Enemy extends GamePiece implements Drawable, Moveable {
 
 	@Override
 	public void move(Drawable[] gameBoard, int playerLocation) {
-		 if (playerLocation < getLocation()) {
-			 location --;
-		 }
-		 else {
-			 location++;
-		 }
+		int counter = 1;
+		if (playerLocation < getLocation()) {
+			while(gameBoard[getLocation()-1] != null){
+				counter++;
+			}
+			setLocation(getLocation()-counter);
+		}
+		else {
+			while(gameBoard[getLocation()-1] != null){
+				counter++;
+			}
+			setLocation(getLocation()+counter);
+		}
 	}
-	
-	
+
+
 
 }

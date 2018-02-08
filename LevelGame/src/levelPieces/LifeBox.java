@@ -10,7 +10,7 @@ public class LifeBox extends GamePiece implements Drawable, Moveable{
 	static char symbol = 'L';
 	private Random rand = new Random();
 
-	
+
 	public LifeBox(int location){
 		super(symbol, location);
 	}
@@ -25,9 +25,10 @@ public class LifeBox extends GamePiece implements Drawable, Moveable{
 
 	@Override
 	public void move(Drawable[] gameBoard, int playerLocation) {
-		int r = rand.nextInt() % 21;	//random spot on array
-		//need to make sure its not in way of other pieces
-		
-		
+		int r = rand.nextInt() % 21;	//random spot on array - idk if this is how you do random
+		while(gameBoard[r] != null){
+			r = rand.nextInt() % 21;
+		}
+		setLocation(r);		
 	}
 }
