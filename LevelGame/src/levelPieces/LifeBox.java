@@ -1,3 +1,12 @@
+/**
+ * LifeBox Class
+ * Movement: random
+ * Interaction: gives a life, decreases damagePoints
+ * 
+ * @author Sarah McCabe
+ * @author Stephen Kistler
+ * 
+ */
 // Need to fill in move method - random placement
 package levelPieces;
 

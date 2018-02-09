@@ -1,4 +1,11 @@
-// Drawable piece - no interaction or movement
+/**
+ * Confusion Class
+ * Drawable piece with essentially no use (no interaction or movement)
+ * 
+ * @author Sarah McCabe
+ * @author Stephen Kistler
+ * 
+ */
 package levelPieces;
 
 import gameEngine.Drawable;
