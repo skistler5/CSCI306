@@ -1,4 +1,4 @@
-// Drawable piece - no interaction
+// Drawable piece - no interaction or movement
 package levelPieces;
 
 import gameEngine.Drawable;

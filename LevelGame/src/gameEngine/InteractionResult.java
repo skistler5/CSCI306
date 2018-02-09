@@ -8,6 +8,6 @@ package gameEngine;
  * 
  */
 public enum InteractionResult {
-	HIT, KILL, ADVANCE, GET_POINT, LIFE, NONE;
+	HIT, KILL, ADVANCE, LIFE, HINT, NONE;
 
 }

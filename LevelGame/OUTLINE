@@ -1,9 +1,0 @@
-enemy - game over, hits a life - on square closer
-player - move - user moves (forward, jump over space, back) - can be next to obstacle 
-//friend - health or attacks enemy for you - life box? - randomly move - cannot be next to obstacle 
-obstacle - stays still, need to jump or something - stationary - hit and die immediately no matter the lives
-next level item - next level, need certain num to win - stationary
-random - can help or hurt, random, take chance
-
-3 levels to win
-1 life to start

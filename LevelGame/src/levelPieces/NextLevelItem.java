@@ -4,8 +4,8 @@ package levelPieces;
 import gameEngine.Drawable;
 import gameEngine.InteractionResult;
 
-public class NextLevelItem extends GamePiece implements Drawable{
-	static char symbol = 'N';
+public class NextLevelItem extends GamePiece{
+	static char symbol = '*';
 			
 	public NextLevelItem(int location) {
 		super(symbol, location);
@@ -19,5 +19,4 @@ public class NextLevelItem extends GamePiece implements Drawable{
 		return null;
 	}
 	
-
 }

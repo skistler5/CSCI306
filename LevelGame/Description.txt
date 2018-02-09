@@ -1,0 +1,19 @@
+This file describes how our pieces meet the requirements. 
+Authors: Sarah McCabe, Stephen Kistler
+Due: 2/9/18
+
+Interactive Pieces:
+	Enemy (E): It hits when landed on.
+	LifeBox (L): It gives life (takes away a hit) when landed on.
+	NextLevelItem (*): It advances player to next level. 
+	Obstacle (O): It kills when landed on, causing the game to be over (adds obstacle with level increase).
+	Rando (!): It hits or gives life (determined randomly) when landed on. 
+	Script (^): As a distance interactive piece,from 1 spot away (right and left) and landed on, it has a hint interaction that prints hint or words of encouragement.
+	
+Moveable Pieces:
+	Enemy (E): It moves one place towards player each time, hoping over non-moveable objects. Once Enemy hits player, it starts at over at its inital position.
+	LifeBox (L): It moves randomly.
+
+Drawable only:
+	Confusion (?): Does not move, or interact. It is simply there as a another space on the board.
+	

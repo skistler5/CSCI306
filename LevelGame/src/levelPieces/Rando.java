@@ -5,19 +5,20 @@ import gameEngine.Drawable;
 import gameEngine.InteractionResult;
 import java.util.Random;
 
-public class Rando extends GamePiece implements Drawable{
+public class Rando extends GamePiece{
 	static char symbol = '!';
+	private Random random;
 			
 	public Rando(int location) {
 		super(symbol, location);
+		random = new Random();
 	}
 
 	@Override
 	public InteractionResult interact(Drawable[] pieces, int playerLocation) {
-		Random rand = new Random();
-		int r = rand.nextInt(1);
+		boolean hitOrLife = random.nextBoolean();
 		if(getLocation() == playerLocation) {
-			if(r == 1) {
+			if(hitOrLife) {
 				return InteractionResult.HIT;
 			}
 			else {

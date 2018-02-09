@@ -1,7 +1,5 @@
 package gameEngine;
 import java.util.ArrayList;
-
-
 import levelPieces.GamePiece;
 import levelPieces.LevelEngine;
 
@@ -17,6 +15,10 @@ import levelPieces.LevelEngine;
  */
 
 public class GameEngine {
+	//Used for HINT interaction
+	private int counter = 0;
+	private String[] arr = {"Keep up the good work!","Hint: Obstacles kill immediately.","Don't die!", "Hover around ^ for more information","Take a chance on the !"};
+
 	/**
 	 * Determines the size of the game board. 
 	 * 
@@ -112,10 +114,6 @@ public class GameEngine {
 	public void interaction() {
 		for (GamePiece piece : interactingPieces) {
 			InteractionResult result = piece.interact(gameBoard, player.getLocation());		
-			if (result == InteractionResult.GET_POINT) {
-				player.addPoint(); 
-				System.out.println("\nYou just won a prize!\n");
-			}
 			if (result == InteractionResult.HIT) {
 				player.takeDamage();
 				System.out.println("\nYou just took a hit!\n");
@@ -139,6 +137,16 @@ public class GameEngine {
 				player.wonAdvance();
 				System.out.println("\nGood news, you have won an advance!\n");
 				// can only advance once
+				break;
+			}
+			if (result == InteractionResult.HINT) {
+				System.out.println(arr[counter] + "\n");
+				if(counter == 4) {
+					counter = 0;
+				}
+				else {
+					counter++;
+				}
 				break;
 			}
 		}			

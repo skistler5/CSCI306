@@ -2,14 +2,14 @@
 package levelPieces;
 
 import gameEngine.Drawable;
+
 import gameEngine.InteractionResult;
 import gameEngine.Moveable;
 import java.util.Random;
 
-public class LifeBox extends GamePiece implements Drawable, Moveable{
+public class LifeBox extends GamePiece implements Moveable{
 	static char symbol = 'L';
-	private Random rand = new Random();
-
+	private Random random = new Random(5);
 
 	public LifeBox(int location){
 		super(symbol, location);
@@ -24,11 +24,23 @@ public class LifeBox extends GamePiece implements Drawable, Moveable{
 	}
 
 	@Override
-	public void move(Drawable[] gameBoard, int playerLocation) {
-		int r = rand.nextInt() % 21;	//random spot on array - idk if this is how you do random
-		while(gameBoard[r] != null){
-			r = rand.nextInt() % 21;
+	public void move(Drawable[] pieces, int playerLocation) {
+		int newPosition=Math.abs(random.nextInt()%21);
+		while (pieces[newPosition]!=null){
+			newPosition=Math.abs(random.nextInt()%21);
 		}
-		setLocation(r);		
+		pieces[getLocation()]=null;
+		setLocation(newPosition);
+		pieces[newPosition]=this;
+		/*
+	}
+		int r = (int)(Math.random() * 15);	//random spot on array - idk if this is how you do random
+		while(gameBoard[r] != null  && r != playerLocation){
+			r = (int)(Math.random() * 15);
+		}
+		gameBoard[getLocation()] = null;
+		setLocation(r);
+		gameBoard[getLocation()] = this;
+		 */
 	}
 }

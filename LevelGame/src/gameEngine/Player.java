@@ -21,7 +21,7 @@ public class Player implements Drawable {
 	 * The number of points to complete a level. 
 	 * Player can earn 1 point at a time by interacting with a game piece.
 	 */
-	public final static int POINTS_TO_ADVANCE = 2;
+	public final static int POINTS_TO_ADVANCE = 1;
 
 	// Variables to track the player status
 	private int location;
@@ -164,6 +164,7 @@ public class Player implements Drawable {
 	 */
 	private void displayMenu() {
 		System.out.println();
+		System.out.println("Lives: " + (POINTS_TO_DIE - damagePoints));
 		System.out.println("1: Move right");
 		System.out.println("2: Move left");
 		System.out.println("3: Jump right");

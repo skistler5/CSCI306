@@ -2,12 +2,11 @@
 package levelPieces;
 
 import gameEngine.Drawable;
-
 import gameEngine.InteractionResult;
 import gameEngine.Moveable;
 
-public class Enemy extends GamePiece implements Drawable, Moveable {
-	static char symbol = 'E';
+public class Enemy extends GamePiece implements Moveable {
+	static char symbol = 'E';	
 
 	public Enemy(int location) {
 		super(symbol, location);
@@ -21,23 +20,26 @@ public class Enemy extends GamePiece implements Drawable, Moveable {
 		return null;
 	}
 
+	//moves enemy back and forth one place - should move one closer to player location ***FIX***
 	@Override
-	public void move(Drawable[] gameBoard, int playerLocation) {
+	public void move(Drawable[] pieces, int playerLocation) {
 		int counter = 1;
-		if (playerLocation < getLocation()) {
-			while(gameBoard[getLocation()-1] != null){
+		if(playerLocation <= getLocation()) {
+			while(pieces[getLocation()-counter]!=null) {
 				counter++;
 			}
 			setLocation(getLocation()-counter);
+			pieces[getLocation()+counter]=null;
+			pieces[getLocation()]=this;
 		}
-		else {
-			while(gameBoard[getLocation()-1] != null){
+		else if(playerLocation > getLocation()){
+			while(pieces[getLocation()+counter]!=null) {
 				counter++;
 			}
 			setLocation(getLocation()+counter);
+			pieces[getLocation()-counter]=null;
+			pieces[getLocation()]=this;
 		}
 	}
-
-
 
 }

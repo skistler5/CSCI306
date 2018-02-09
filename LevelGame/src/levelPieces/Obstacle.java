@@ -4,7 +4,7 @@ package levelPieces;
 import gameEngine.Drawable;
 import gameEngine.InteractionResult;
 
-public class Obstacle extends GamePiece implements Drawable{
+public class Obstacle extends GamePiece{
 	static char symbol = 'O';
 
 	public Obstacle(int location) {
@@ -16,7 +16,9 @@ public class Obstacle extends GamePiece implements Drawable{
 		if(getLocation() == playerLocation) {
 			return InteractionResult.KILL;
 		}
-		return null;
+		else {
+			return null;
+		}
 	}
-
+	
 }
