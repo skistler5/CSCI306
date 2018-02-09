@@ -1,4 +1,12 @@
-//Finish methods, instantiate pieces
+/**
+ * LevelEngine Class
+ * Controls levels, and updates movable and interacting pieces
+ * 
+ * @author Sarah McCabe
+ * @author Stephen Kistler
+ * 
+ */
+
 package levelPieces;
 
 import gameEngine.Moveable;

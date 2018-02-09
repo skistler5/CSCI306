@@ -7,7 +7,6 @@
  * @author Stephen Kistler
  * 
  */
-// Need to fill in move method - random placement
 package levelPieces;
 
 import gameEngine.Drawable;
@@ -32,6 +31,11 @@ public class LifeBox extends GamePiece implements Moveable{
 		return null;
 	}
 
+	/**
+	 * LifeBox: Move Method
+	 * Generates random position on game board
+	 * If spot is taken, regenerates until spot is available
+	 */
 	@Override
 	public void move(Drawable[] pieces, int playerLocation) {
 		int newPosition=Math.abs(random.nextInt()%21);
@@ -41,15 +45,6 @@ public class LifeBox extends GamePiece implements Moveable{
 		pieces[getLocation()]=null;
 		setLocation(newPosition);
 		pieces[newPosition]=this;
-		/*
-	}
-		int r = (int)(Math.random() * 15);	//random spot on array - idk if this is how you do random
-		while(gameBoard[r] != null  && r != playerLocation){
-			r = (int)(Math.random() * 15);
-		}
-		gameBoard[getLocation()] = null;
-		setLocation(r);
-		gameBoard[getLocation()] = this;
-		 */
+
 	}
 }

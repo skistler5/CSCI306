@@ -1,3 +1,12 @@
+/**
+ * Script Class
+ * Does not move.
+ * Interaction: gives player hint or good luck phrase.
+ * 
+ * @author Sarah McCabe
+ * @author Stephen Kistler
+ * 
+ */
 package levelPieces;
 
 import gameEngine.Drawable;

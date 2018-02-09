@@ -1,4 +1,12 @@
-//game piece does not move
+/**
+ * Obstacle Class
+ * Does not move.
+ * Interaction: kills immediately
+ * 
+ * @author Sarah McCabe
+ * @author Stephen Kistler
+ * 
+ */
 package levelPieces;
 
 import gameEngine.Drawable;

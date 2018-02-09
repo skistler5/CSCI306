@@ -1,4 +1,12 @@
-// Need to fill in move method - moves one toward the player each time
+/**
+ * Enemy Class
+ * Movement: Moves one space towards the player each time
+ * Interaction: hits, adds a damagePoints
+ * 
+ * @author Sarah McCabe
+ * @author Stephen Kistler
+ * 
+ */
 package levelPieces;
 
 import gameEngine.Drawable;
@@ -20,6 +28,11 @@ public class Enemy extends GamePiece implements Moveable {
 		return null;
 	}
 
+	/**
+	 * Enemy: Move Method
+	 * Moves one spot closer to player each time
+	 * If spot is taken, jumps until next available spot
+	 */
 	//moves enemy back and forth one place - should move one closer to player location ***FIX***
 	@Override
 	public void move(Drawable[] pieces, int playerLocation) {

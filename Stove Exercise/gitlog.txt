@@ -1,0 +1,71 @@
+commit 6061f4148f4b88be08d22ea92a5e03d509d33808
+Author: Ellie McCabe <ellie@csm-wl-dhcp-239-160.mines.edu>
+Date:   Fri Feb 2 13:52:35 2018 -0700
+
+    fixed timer - we had setup the setting as class instead of an enum as the assignment stated
+
+commit fe5643d76d0b15a666d6530688a6cbc6a5f58b2f
+Author: Ellie McCabe <ellie@csm-wl-dhcp-229-97.mines.edu>
+Date:   Thu Feb 1 12:07:49 2018 -0700
+
+    in class
+
+commit b699d1922fe002b71d403b5da9e9bff3981a1064
+Author: Ellie McCabe <ellie@csm-wl-dhcp-229-97.mines.edu>
+Date:   Thu Feb 1 11:35:49 2018 -0700
+
+    update display format
+
+commit 61461e766f96fb647fb1724401da82aca66c6e8d
+Author: Stephen Kistler <skistler@mymail.mines.edu>
+Date:   Thu Feb 1 10:16:04 2018 -0700
+
+    added updateTemperature implementation
+
+commit 1cf68b2d6b4d3f56f9b33197c44ed52f076db668
+Author: Stephen Kistler <skistler@mymail.mines.edu>
+Date:   Wed Jan 31 16:59:14 2018 -0700
+
+    added LevelGame
+
+commit 4c15c468fed094fda37433c75d42a83dc849e842
+Author: Stephen Kistler <35813476+skistler5@users.noreply.github.com>
+Date:   Wed Jan 31 13:25:54 2018 -0700
+
+    Update .gitignore
+
+commit 88c1964f1642aaec52f382aae18a41cca01f62c4
+Author: Ellie McCabe <ellie@csm-wl-dhcp-239-24.mines.edu>
+Date:   Wed Jan 31 12:39:16 2018 -0700
+
+    add LevelGame
+
+commit cae339096ce08ca5d1f302b85b30fd62c7b340a8
+Author: Ellie McCabe <ellie@csm-wl-dhcp-231-76.mines.edu>
+Date:   Tue Jan 30 23:51:19 2018 -0700
+
+    Added Burner toString and minusButton, changed Setting toString, and finished Stove display stove
+
+commit 6708889f8a8fe67361e151fa969343beccb032f4
+Author: Stephen Kistler <skistler@mymail.mines.edu>
+Date:   Tue Jan 30 15:45:09 2018 -0700
+
+    paired: made setting and burner classes
+
+commit 8f57558835e2ad8248548bf851e9a90251ead4ab
+Author: Stephen Kistler <skistler@mymail.mines.edu>
+Date:   Tue Jan 30 12:09:54 2018 -0700
+
+    created Stove Exercise Project
+
+commit 266b5c9577b5781fe16d0f011459c0b67fbf28ea
+Author: Ellie McCabe <35785356+mccabe1@users.noreply.github.com>
+Date:   Tue Jan 30 11:54:35 2018 -0700
+
+    Create importantREADME.md
+
+commit a49617de31e68e8d7754da790ce5071f2a539f9f
+Author: Stephen Kistler <skistler@mymail.mines.edu>
+Date:   Tue Jan 30 11:27:13 2018 -0700
+
+    added .gitignore

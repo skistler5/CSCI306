@@ -1,5 +1,5 @@
 /**
- * Confusion Class
+ * Confusion Class 
  * Drawable piece with essentially no use (no interaction or movement)
  * 
  * @author Sarah McCabe

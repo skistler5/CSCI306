@@ -1,4 +1,12 @@
-//game piece does not move
+/**
+ * NextLevelItem Class
+ * Does not move.
+ * Interaction: advances to next level with interaction
+ * 
+ * @author Sarah McCabe
+ * @author Stephen Kistler
+ * 
+ */
 package levelPieces;
 
 import gameEngine.Drawable;
