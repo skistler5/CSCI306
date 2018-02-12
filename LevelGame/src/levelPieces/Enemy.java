@@ -33,7 +33,7 @@ public class Enemy extends GamePiece implements Moveable {
 	 * Moves one spot closer to player each time
 	 * If spot is taken, jumps until next available spot
 	 */
-	//moves enemy back and forth one place - should move one closer to player location ***FIX***
+	//should move one closer to player location in player direction
 	@Override
 	public void move(Drawable[] pieces, int playerLocation) {
 		int counter = 1;
@@ -41,17 +41,21 @@ public class Enemy extends GamePiece implements Moveable {
 			while(pieces[getLocation()-counter]!=null) {
 				counter++;
 			}
-			setLocation(getLocation()-counter);
-			pieces[getLocation()+counter]=null;
-			pieces[getLocation()]=this;
+			if(getLocation()-counter > 0 && getLocation()-counter < 19) {
+				setLocation(getLocation()-counter);
+				pieces[getLocation()+counter]=null;
+				pieces[getLocation()]=this;
+			}
 		}
 		else if(playerLocation > getLocation()){
 			while(pieces[getLocation()+counter]!=null) {
 				counter++;
 			}
-			setLocation(getLocation()+counter);
-			pieces[getLocation()-counter]=null;
-			pieces[getLocation()]=this;
+			if(getLocation()-counter > 0 && getLocation()+counter < 19) {
+				setLocation(getLocation()+counter);
+				pieces[getLocation()-counter]=null;
+				pieces[getLocation()]=this;
+			}
 		}
 	}
 
