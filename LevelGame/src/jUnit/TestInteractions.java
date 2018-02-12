@@ -1,3 +1,6 @@
+//Authors: Sarah McCabe, Stephen Kistler
+//Due: 2/12/18
+
 package jUnit;
 
 import static org.junit.Assert.*;
@@ -14,8 +17,7 @@ import levelPieces.Rando;
 import levelPieces.Script;
 
 public class TestInteractions{
-
-	
+	// Enemy, LifeBox, NextLevelItem, and Obstacle have same test, but different interactions
 	@Test
 	public void testEnemy() {
 		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
@@ -81,6 +83,7 @@ public class TestInteractions{
 		}
 	}
 	
+	// Random interaction
 	@Test
 	public void testRando() {
 		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
@@ -104,6 +107,7 @@ public class TestInteractions{
 		}
 	}
 
+	//distance interaction
 	@Test
 	public void testScript() {
 		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];

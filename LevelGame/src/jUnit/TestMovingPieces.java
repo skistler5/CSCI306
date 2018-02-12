@@ -1,14 +1,16 @@
+//Authors: Sarah McCabe, Stephen Kistler
+//Due: 2/12/18
+
 package jUnit;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
 import gameEngine.Drawable;
 import gameEngine.GameEngine;
-import gameEngine.InteractionResult;
-import levelPieces.Rando;
 import levelPieces.LifeBox;
 import gameEngine.Player;
 import levelPieces.Obstacle;
+import levelPieces.Enemy;
 import levelPieces.LevelEngine;
 
 public class TestMovingPieces {
@@ -36,5 +38,29 @@ public class TestMovingPieces {
 		}
 		
 		assert(count > 1);
+	}
+	
+	@Test
+	public void testEnemyMovement(){
+		int count = 0;
+		Drawable[] pieces = new Drawable[GameEngine.BOARD_SIZE];
+		LevelEngine levels = new LevelEngine();
+		Player player = new Player(10);
+
+		//test move toward player when player is less than
+		Enemy enemy = new Enemy(15);
+		enemy.move(pieces, player.getLocation());
+		if(enemy.getLocation() == 14) {
+			count ++;
+		}
+		
+		//player is greater then
+		Enemy enemy2 = new Enemy(4);
+		enemy2.move(pieces, player.getLocation());
+		if(enemy2.getLocation() == 5) {
+			count ++;
+		}
+
+		assert(count == 2);
 	}
 }
