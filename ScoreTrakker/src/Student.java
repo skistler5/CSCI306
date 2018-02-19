@@ -13,7 +13,7 @@ public class Student implements Comparable<Student> {
 	//toString - figure 1 format
 	@Override
 	public String toString() {
-		return name + score;
+		return name + " " +   score;
 	}
 
 	//compare students by scores
