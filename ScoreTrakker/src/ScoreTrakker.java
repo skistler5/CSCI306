@@ -32,6 +32,7 @@ public class ScoreTrakker {
 					System.out.println("Incorrect format for " + name + " not a valid score: " + scoreStr + "\n");
 				}
 			}
+			in.close();
 		}
 		catch(FileNotFoundException e) {	
 			processFiles();
