@@ -2,7 +2,7 @@
 // Throws clause purpose: 
 
 // Part 1: need to use student compareTo to sort, not sort function in printInOrder()
-// Part 2: done, except need to fix file not found for files loop
+
 
 import java.util.ArrayList; 
 import java.util.Collections;
@@ -34,9 +34,11 @@ public class ScoreTrakker {
 			}
 			in.close();
 		}
-		catch(FileNotFoundException e) {	
-			processFiles();
-		} 
+		finally {
+			if(file == null) {
+				processFiles();
+			}
+		}
 	}
 
 	//sort and print ArrayList
@@ -50,7 +52,7 @@ public class ScoreTrakker {
 	}
 
 	//call loadDataFromFile method (pass in correct file) and call printInOrder
-	public void processFiles() throws FileNotFoundException{
+	public void processFiles() /*throws FileNotFoundException*/{
 		for (int i = 0; i < 3; i++) {
 			try {
 				loadDataFromFile(files[i]);
