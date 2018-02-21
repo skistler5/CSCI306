@@ -44,8 +44,23 @@ public class ScoreTrakker {
 	//sort and print ArrayList
 	public void printInOrder() {
 		System.out.println("Student Score List");
-		Collections.sort(studentList);				//needs to sort using loop and compareTo	
-		for(Student s : studentList) {
+		ArrayList<Student> sorted = new ArrayList<Student>();
+		sorted.clear();
+		
+		int index = 0;
+		while(studentList.size() > 0){
+			index = 0;
+			for(int j = index; j < studentList.size(); j++){
+				if(studentList.get(index).compareTo(studentList.get(j)) > 0){
+					index = j;
+				}
+			}
+			Student s = studentList.get(index);
+			studentList.remove(index);
+			sorted.add(s);
+		}
+		
+		for(Student s : sorted) {
 			System.out.println(s.toString());
 		}
 		System.out.println(" ");
