@@ -1,8 +1,4 @@
 // Authors: Stephen Kistler, Sarah McCabe
-// Throws clause purpose: 
-
-// Part 1: need to use student compareTo to sort, not sort function in printInOrder()
-
 
 import java.util.ArrayList; 
 import java.util.Collections;
