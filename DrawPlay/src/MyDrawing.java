@@ -1,3 +1,4 @@
+//Authors: Sarah McCabe, Stephen Kistler
 import java.awt.Graphics;
 
 import javax.swing.JFrame;

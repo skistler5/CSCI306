@@ -1,3 +1,5 @@
+//Author: Sarah McCabe, Stephen Kistler
+
 import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.geom.*;
